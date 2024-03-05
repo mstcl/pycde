@@ -55,5 +55,5 @@ $ docker run -p 127.0.0.1:8888:8888 -v /srv/projects:/projects --restart unless-
 
 ## Usage
 
-Go to [http://localhost:888](http://localhost:8888) for jupyterlab. There are
+Go to [http://localhost:8888](http://localhost:8888) to access Jupyter Lab. There are
 no login tokens. To access remotely, use SSH tunnelling.
