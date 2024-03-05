@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  pycde:
+    build: .
+    container_name: pycde
+    restart: unless-stopped
+    security_opt:
+      - no_new_privileges
+    logging:
+      options:
+        max-size: 1m
+    ports:
+      - 127.0.0.1:8888:8888
+    volumes:
+      - /srv/projects:/project
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

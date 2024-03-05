@@ -1,0 +1,13 @@
+tensorflow[cuda]==2.13.0
+keras
+numpy
+matplotlib
+h5py
+cmcrameri
+scipy
+seaborn
+tqdm
+pandas
+ipython
+ipykernel
+jupyterlab
