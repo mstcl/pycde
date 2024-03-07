@@ -6,25 +6,22 @@ RUN apt-get update && apt-get install -y wget ca-certificates \
 
 WORKDIR /
 
-RUN pip3 install --upgrade pip
+RUN pip3 install --no-cache-dir --upgrade pip
 
 COPY requirements.txt /
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8888 6006
+EXPOSE 8888
 
 WORKDIR /project
 
 RUN useradd -m jupyter
-RUN chown -R jupyter:jupyter /project
-RUN chmod 755 /project
+RUN chown -R jupyter:jupyter /project && chmod 755 /project
 
 USER jupyter
 
 RUN mkdir -p /home/jupyter/.local/share/fonts
-RUN wget -O /home/jupyter/.local/share/fonts/SourceSerif4.ttf https://github.com/google/fonts/raw/c7fa7c4bbf5fb08ba0464aa672aa3a9deea36c2b/ofl/sourceserif4/SourceSerif4%5Bopsz,wght%5D.ttf
+ADD --chown=jupyter:jupyter https://github.com/google/fonts/raw/c7fa7c4bbf5fb08ba0464aa672aa3a9deea36c2b/ofl/sourceserif4/SourceSerif4%5Bopsz,wght%5D.ttf /home/jupyter/.local/share/fonts/SourceSerif4.ttf
 
 COPY run_jupyter.sh /
-
-CMD ["/run_jupyter.sh"]

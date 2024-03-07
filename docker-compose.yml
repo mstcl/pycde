@@ -6,14 +6,15 @@ services:
     container_name: pycde
     restart: unless-stopped
     security_opt:
-      - no_new_privileges
+      - no-new-privileges
     logging:
       options:
         max-size: 1m
     ports:
       - 127.0.0.1:8888:8888
     volumes:
-      - /srv/projects:/project
+      - /projects:/project
+    entrypoint: /run_jupyter.sh
     deploy:
       resources:
         reservations:
