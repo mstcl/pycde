@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.8.0-base-ubuntu22.04
+FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
 
 RUN apt-get update && apt-get install -y wget ca-certificates \
     git curl vim python-is-python3 python3-dev python3-pip \

@@ -3,9 +3,6 @@
 A docker image that comes with common packages for science, especially for
 machine learning with Nvidia + CUDA.
 
-The base image comes from
-[nvidia/cuda:11.8.0-base-ubuntu20.04](https://hub.docker.com/layers/nvidia/cuda/11.8.0-base-ubuntu20.04/images/sha256-25940548e6b26be76a73a25684be543ecb5a2eea72d096c877407f0902ee083b?context=explore).
-
 ## Packages
 
 - tensorflow

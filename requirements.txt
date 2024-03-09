@@ -1,4 +1,4 @@
-tensorflow[cuda]==2.13.0
+tensorflow[and-cuda]==2.13.0
 keras
 numpy
 matplotlib
