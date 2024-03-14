@@ -1,20 +1,22 @@
 {
- "argv": [
-  "/usr/bin/docker",
-  "run",
-  "--rm",
-  "--network=host",
-  "-v",
-  "{connection_file}:/connection-spec",
-  "-v",
-  "/projects:/project",
-  "pycde-pycde",
-  "python",
-  "-m",
-  "ipykernel_launcher",
-  "-f",
-  "/connection-spec"
- ],
- "display_name": "docker",
- "language": "python"
+  "argv": [
+    "/usr/bin/docker",
+    "run",
+    "--rm",
+    "--network=host",
+    "--gpus",
+    "all",
+    "-v",
+    "{connection_file}:/connection-spec",
+    "-v",
+    "/projects:/project",
+    "pycde-pycde",
+    "python",
+    "-m",
+    "ipykernel_launcher",
+    "-f",
+    "/connection-spec"
+  ],
+  "display_name": "docker",
+  "language": "python"
 }
