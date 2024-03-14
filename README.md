@@ -30,7 +30,7 @@ $ nvidia-ctk runtime configure --runtime=docker
 $ sudo systemctl restart docker
 ```
 
-## Running with Jupyter Lab
+## Using the bundled Jupyter Lab
 
 ```sh
 $ git pull github.com/mstcl/pycde
@@ -41,7 +41,7 @@ $ docker compose up -d --build
 You can change the bind mount inside `docker-compose.yml` to mount your project
 folder.
 
-### Docker run
+If you want to use standalone Docker instead:
 
 ```sh
 $ docker build -t pycde
